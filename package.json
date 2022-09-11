@@ -1,0 +1,19 @@
+{
+  "name": "workersbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "\"tinchopapa56\"",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongo": "^0.1.0",
+    "mongoose": "^6.6.0"
+  }
+}
