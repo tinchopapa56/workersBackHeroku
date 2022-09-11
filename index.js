@@ -1,6 +1,7 @@
 import Express from "express";
 import Mongoose from "mongoose";
 import Cards from "./dbCards.js";
+import Workers from "./workers.js";
 import Cors from "cors";
 
 // App config
