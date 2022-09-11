@@ -25,7 +25,7 @@ const connectionUrl = `mongodb+srv://Workers-hub:${pass}@workers-hub.iiibfun.mon
 
 // API Endpoints
 app.get("/", (req, res) => {
-    res.status(200).send("Server created")
+    res.status(200).send("Server created bien!")
 })
 app.post("/tinder/cards", (req, res) => {
     const dbCard = req.body;
