@@ -69,17 +69,20 @@ app.post("/workers", (req, res) => {
         }
     })
 })
-// app.delete("/workers/:workerId", (req,res) =>{
-//     const workerId = req.params.workerId;
+app.delete("/workers/:workerId", (req,res) =>{
+    const workerId = req.params.workerId;
 
-//     Workers.findById(workerId, (err, worker) =>{
-//         if(err) res.status(500).send({message: `Error finding worker id: ${err}`});
-//             worker.remove(err => {
-//                 if(err) res.status(500).send({message: `Error REMOVING worker: ${err}`});
-//                 res.status(200).send({message: "Worker SUCCESFULLY removed"})
-//             })
-//     })
-// })
+    Workers.findById(workerId, (err, worker) =>{
+        if(err) {
+            res.status(500).send({message: `Error finding worker id: ${err}`});
+        } else {
+            worker.remove(err => {
+                if(err) res.status(500).send({message: `Error REMOVING worker: ${err}`});
+                res.status(200).send({message: "Worker SUCCESFULLY removed"})
+            })
+        }
+    })
+})
 // app.put("/workers/:workerId", (req, res) =>{
 //     let workerId = req.params.workerId;
 //     let updateBody = req.body;
