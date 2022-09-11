@@ -83,15 +83,18 @@ app.delete("/workers/:workerId", (req,res) =>{
         }
     })
 })
-// app.put("/workers/:workerId", (req, res) =>{
-//     let workerId = req.params.workerId;
-//     let updateBody = req.body;
+app.put("/workers/:workerId", (req, res) =>{
+    let workerId = req.params.workerId;
+    let updateBody = req.body;
 
-//     Workers.findByIdAndUpdate(workerId, updateBody, (err, workerUpdated) => {
-//         if(err) res.status(500).send({message: `Error finding -EEESEESYO- ID to update: ${err}`});
-//         res.status(200).send({updatedData: updateBody})
-//     })
-// })
+    Workers.findByIdAndUpdate(workerId, updateBody, (err, workerUpdated) => {
+        if(err){
+            res.status(500).send({message: `Error finding ID to update: ${err}`});
+        }else{
+            res.status(200).send({updatedData: updateBody})
+        }
+    })
+})
 
 
 // Listener
