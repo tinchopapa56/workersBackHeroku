@@ -58,6 +58,37 @@ app.get("/workers", (req, res) => {
         }
     })
 })
+app.post("/workers", (req, res) => {
+    const workerCard = req.body;
+
+    Workers.create(workerCard, (err,data)=>{
+        if(err) {
+            res.status(500).send(err) 
+        } else {
+            res.status(201).send(data);
+        }
+    })
+})
+// app.delete("/workers/:workerId", (req,res) =>{
+//     const workerId = req.params.workerId;
+
+//     Workers.findById(workerId, (err, worker) =>{
+//         if(err) res.status(500).send({message: `Error finding worker id: ${err}`});
+//             worker.remove(err => {
+//                 if(err) res.status(500).send({message: `Error REMOVING worker: ${err}`});
+//                 res.status(200).send({message: "Worker SUCCESFULLY removed"})
+//             })
+//     })
+// })
+// app.put("/workers/:workerId", (req, res) =>{
+//     let workerId = req.params.workerId;
+//     let updateBody = req.body;
+
+//     Workers.findByIdAndUpdate(workerId, updateBody, (err, workerUpdated) => {
+//         if(err) res.status(500).send({message: `Error finding -EEESEESYO- ID to update: ${err}`});
+//         res.status(200).send({updatedData: updateBody})
+//     })
+// })
 
 
 // Listener
